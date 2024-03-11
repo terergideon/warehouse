@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Items List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <!-- Bootstrap CSS -->
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/[email protected]/dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/dist/css/bootstrap.min.css" />
+
+
+  <!-- Custom CSS -->
+<!--  <link rel="stylesheet" href="/css/styles.css">-->
+</head>
+<body>
+<div class="container">
+  <h2>Items List</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Year of Creation</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.brand}"></td>
+      <td th:text="${item.yearOfCreation}"></td>
+      <td th:text="${item.price}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="/addItem" class="btn btn-primary">Add New Item</a>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/[email protected]/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<!--<script src="/js/scripts.js"></script>-->
+</body>
+</html>
